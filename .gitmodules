@@ -1,0 +1,3 @@
+[submodule "include/litenkjerne"]
+	path = include/litenkjerne
+	url = https://github.com/bga/litenkjerne
