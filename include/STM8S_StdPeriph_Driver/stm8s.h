@@ -53,7 +53,6 @@
 // #define __STDC_CONSTANT_MACROS
 #include <stdint.h>
 
-#include <stdint.h>
 
 #ifdef __cplusplus
 namespace STM8S_StdPeriph_Lib {
