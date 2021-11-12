@@ -2716,12 +2716,14 @@ enum MAP_FILE_Base_Addresses {
 
 #if defined(STM8S105) || defined(STM8S005) || defined(STM8S103) || defined(STM8S003) || \
 		defined(STM8S001) || defined(STM8S903) || defined(STM8AF626x) || defined(STM8AF622x)
- #define ADC1 ((STM8S_STDPERIPH_LIB__NS_PREFIX ADC1_TypeDef *) ADC1_BaseAddress)
+ static __IO ADC1_TypeDef* const ADC1 = ((ADC1_TypeDef*) ADC1_BaseAddress);
+ #define STM8S_STDPERIPH_LIB__ADC1 ((STM8S_STDPERIPH_LIB__NS_PREFIX ADC1_TypeDef *) ADC1_BaseAddress)
 #endif /* (STM8S105)||(STM8S103)||(STM8S005)||(STM8S003)||(STM8S001)||(STM8S903)||(STM8AF626x)||(STM8AF622x)*/
 
 #if defined(STM8S208) || defined(STM8S207) || defined (STM8S007) || defined (STM8AF52Ax) || \
 		defined (STM8AF62Ax)
-#define ADC2 ((ADC2_TypeDef *) ADC2_BaseAddress)
+static __IO ADC2_TypeDef* const ADC2 = ((ADC2_TypeDef*) ADC2_BaseAddress);
+#define STM8S_STDPERIPH_LIB__ADC2 ((ADC2_TypeDef *) ADC2_BaseAddress)
 #endif /* (STM8S208) ||(STM8S207) || (STM8S007) || (STM8AF52Ax) || (STM8AF62Ax) */
 
 static __IO AWU_TypeDef* const AWU = ((AWU_TypeDef *) AWU_BaseAddress);
@@ -2767,7 +2769,8 @@ static __IO GPIO_TypeDef* const GPIOF = ((GPIO_TypeDef *) GPIOF_BaseAddress);
 
 #if defined(STM8S207) || defined (STM8S007) || defined(STM8S208) || defined(STM8S105) || \
 		defined(STM8S005) || defined (STM8AF52Ax) || defined (STM8AF62Ax) || defined (STM8AF626x)
- #define GPIOG ((STM8S_STDPERIPH_LIB__NS_PREFIX GPIO_TypeDef *) GPIOG_BaseAddress)
+ static __IO GPIO_TypeDef* const GPIOG = ((GPIO_TypeDef *) GPIOG_BaseAddress);
+ #define STM8S_STDPERIPH_LIB__GPIOG (STM8S_STDPERIPH_LIB__NS_PREFIX GPIOG)
 #endif /* (STM8S208) ||(STM8S207)  || (STM8S105) || (STM8AF52Ax) || (STM8AF62Ax) || (STM8AF626x) */
 
 #if defined(STM8S207) || defined (STM8S007) || defined(STM8S208) || defined (STM8AF52Ax) || \
