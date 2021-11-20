@@ -134,6 +134,9 @@ struct Ignore: Base<portAddrArg, bitNoArg> {
 	}
 	void toggle() {
 	}
+	Bool read() const {
+		return 0;
+	}
 };
 
 template<

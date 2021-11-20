@@ -61,6 +61,9 @@ struct Self {
 		setBit(m_gpioPort->CR1, bitNo);
 		toggleBit(m_gpioPort->ODR, bitNo);
 	}
+	Bool read() const {
+		return this->m_gpioPort->IDR & _BV(this->bitNo);
+	}
 };
 #ifndef NDEBUG
 	template<>

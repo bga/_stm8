@@ -59,6 +59,9 @@ struct Self: Base<portAddrArg, bitNoArg>, InitJoiner<
 	void toggle() {
 		toggleBit(m_gpioPort->DDR, bitNo);
 	}
+	Bool read() const {
+		return this->m_gpioPort->IDR & _BV(this->bitNo);
+	}
 };
 
 } //# namespace details
