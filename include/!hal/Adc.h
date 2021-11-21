@@ -24,7 +24,7 @@ typedef FU16 Adc_Value;
 
 enum {
 	//# TODO calculate real RC time
-	Adc_maxValue = 1024,
+	Adc_maxValue = 1023,
 	Adc_maxChannelNo = 16,
 };
 
