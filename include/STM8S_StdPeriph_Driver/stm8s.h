@@ -1670,6 +1670,13 @@ enum FLASH_Registers_Bits_Definition {
 	* @}
 	*/
 
+enum FLASH_Unlock_Keys {
+	FLASH_PUKR_KEY1 = ((uint8_t)0x56) /*!< First RASS key */,
+	FLASH_PUKR_KEY2 = ((uint8_t)0xAE) /*!< Second RASS key */,
+	FLASH_DUKR_KEY1 = ((uint8_t)0xAE) /*!< First RASS key */,
+	FLASH_DUKR_KEY2 = ((uint8_t)0x56) /*!< Second RASS key */,
+};
+
 /*----------------------------------------------------------------------------*/
 /**
 	* @brief  Option Bytes (OPT)
