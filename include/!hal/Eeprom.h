@@ -20,8 +20,15 @@
 
 namespace Bga { namespace Mcu { namespace Hal {
 
+Bool Eeprom_isUnlocked() {
+	using namespace ::STM8S_StdPeriph_Lib;
+	return hasBitMask(FLASH->IAPSR, FLASH_IAPSR_DUL);
+}
 void Eeprom_unlock() {
 	using namespace ::STM8S_StdPeriph_Lib;
+	
+	if(Eeprom_isUnlocked()) return;
+	
 	FLASH->DUKR = FLASH_DUKR_KEY1;
 	FLASH->DUKR = FLASH_DUKR_KEY2;
 	while(!hasBitMask(FLASH->IAPSR, FLASH_IAPSR_DUL));
