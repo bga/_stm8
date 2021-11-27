@@ -33,7 +33,7 @@ void Eeprom_unlock() {
 	FLASH->DUKR = FLASH_DUKR_KEY2;
 	while(!hasBitMask(FLASH->IAPSR, FLASH_IAPSR_DUL));
 }
-void Eeprom_lock() {
+inline void Eeprom_lock() {
 	using namespace ::STM8S_StdPeriph_Lib;
 	clearBitMask(FLASH->IAPSR, FLASH_IAPSR_DUL);
 }
